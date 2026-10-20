@@ -1,8 +1,3 @@
-
-function showMessage() {
-    document.getElementById("message").textContent =
-        "Hello! Thank you for visiting my portfolio.";
-}
-
+// Show the current year in the footer
 document.getElementById("year").textContent =
-    new Date().getFullYear();
+  new Date().getFullYear();
