@@ -1,7 +1,5 @@
 
-// ------------------------------
-// 1. Show the Current Year
-// ------------------------------
+
 
 const yearElement = document.getElementById("year");
 
@@ -10,11 +8,6 @@ if (yearElement) {
 }
 
 
-// ------------------------------
-// 2. Typing Animation
-// ------------------------------
-
-// The words that will appear on the screen
 const words = [
     "Beginner Web Developer",
     "HTML Learner",
@@ -22,46 +15,44 @@ const words = [
     "JavaScript Learner"
 ];
 
-// Find the typing text element in HTML
+
 const typingText = document.getElementById("typing-text");
 
-// Keep track of the current word
+
 let wordIndex = 0;
 
-// Keep track of the current letter
+
 let letterIndex = 0;
 
-// Check whether letters are being deleted
 let deleting = false;
 
 
-// Type or delete one letter at a time
 function typeEffect() {
 
-    // Stop if the typing element does not exist
+    
     if (!typingText) {
         return;
     }
 
-    // Get the current word
+  
     const currentWord = words[wordIndex];
 
-    // Add or remove one letter
+    
     if (deleting) {
         letterIndex--;
     } else {
         letterIndex++;
     }
 
-    // Display the letters on the website
+    
     typingText.textContent = currentWord.substring(0, letterIndex);
 
-    // When the word is complete, start deleting
+    
     if (!deleting && letterIndex === currentWord.length) {
 
         deleting = true;
 
-        // Wait before deleting the word
+        
         setTimeout(typeEffect, 1200);
 
     } else if (deleting && letterIndex === 0) {
@@ -88,7 +79,37 @@ function typeEffect() {
 }
 
 
-// Start the typing animation
 if (typingText) {
     typeEffect();
 }
+const backToTop = document.getElementById("backToTop")
+window.addEventListener("scroll",function (){
+    if (window.scrollY > 300){
+        backToTop.style.display = "block"
+    } else {
+        backToTop.style.display = "none"
+    }
+});
+
+
+
+    backToTop.addEventListener("click",function () {
+        window.scrollTo(0, 0);
+           
+        });
+    
+
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+    themeToggle.addEventListener("click",function() {
+        document.body.classList.toggle("light-mode");
+
+        if (document.body.classList.contains("light-mode")) {
+            themeToggle.textContent = "🌙 Night Mode";
+        } else {
+            themeToggle.textContent = "☀️ Day Mode";
+        }
+
+    });
+} 
+    
