@@ -469,3 +469,28 @@ body.light-mode footer {
     min-width: 45px;
     z-index: 9999;
 }
+body.light-mode .greeting,
+body.light-mode .hero-content h2,
+body.light-mode .section-title,
+body.light-mode. skill-card h3,
+body.light-mode .photo-caption {
+    color: #9333ea;
+}
+body.light-mode .about-card p,
+body.light-mode .skill-card p,
+body.light-mode .contact-card p {
+    color: #333;
+}
+body.light-mode .contact-link {
+    color: #9333ea;
+}
+
+body.light-mode .button-outline {
+    color: #9333ea;
+    border-color: #9333ea;
+}
+
+body.light-mode .button-outline:hover {
+    color: white;
+    background-color: #9333ea;
+}

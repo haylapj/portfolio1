@@ -82,22 +82,24 @@ function typeEffect() {
 if (typingText) {
     typeEffect();
 }
-const backToTop = document.getElementById("backToTop")
-window.addEventListener("scroll",function (){
-    if (window.scrollY > 300){
-        backToTop.style.display = "block"
-    } else {
-        backToTop.style.display = "none"
-    }
-});
+const backToTop = document.getElementById("backToTop");
+if (backToTop){
+    window.addEventListener("scroll",function (){
 
+if (window.scrollY > 300) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    });
 
-
-    backToTop.addEventListener("click",function () {
-        window.scrollTo(0, 0);
-           
+    backToTop.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
         });
-    
+    });
+}
 
 const themeToggle = document.getElementById("themeToggle");
 if (themeToggle) {
